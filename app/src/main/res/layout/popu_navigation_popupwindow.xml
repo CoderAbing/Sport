@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D4D4D4"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="导航" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#D4D4D4" />
+
+        <TextView
+            android:id="@+id/btn_popup_navigation_baidu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="百度地图"
+            android:textColor="#727272"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#D4D4D4" />
+
+        <TextView
+            android:id="@+id/btn_popup_navigation_autoNavi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="高德地图"
+            android:textColor="#727272"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#D4D4D4" />
+
+        <TextView
+            android:id="@+id/btn_popup_navigation_web"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="网页地图"
+            android:textColor="#727272"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/btn_popup_navigation_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="取消"
+        android:textSize="16sp" />
+
+
+</LinearLayout>

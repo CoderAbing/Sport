@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECF0F1"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:text="周边场馆"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <!--百度地图控件-->
+    <FrameLayout
+        android:id="@+id/all"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"></com.baidu.mapapi.map.MapView>
+
+
+        <ImageButton
+            android:id="@+id/myLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="40dp"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/line"
+            android:padding="10dp"
+            android:src="@mipmap/main_icon_location" />
+
+
+        <!--搜索栏的布局-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:id="@+id/searchLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="1"
+                    android:background="#0000"
+                    android:hint="请输入场馆名称"
+                    android:padding="8dp"
+                    android:scrollbars="none" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/border" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@null"
+                    android:src="@mipmap/search_icon" />
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/traffic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/searchLayout"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/line_a"
+                android:padding="5dp"
+                android:src="@mipmap/traffic" />
+
+            <!--普通地图-->
+            <ImageButton
+                android:id="@+id/common"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/traffic"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/line_a"
+                android:padding="5dp"
+                android:src="@mipmap/common" />
+
+            <!--卫星地图-->
+            <ImageButton
+                android:id="@+id/site"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/common"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/line_a"
+                android:padding="9dp"
+                android:src="@mipmap/site" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginRight="15dp"
+                android:background="#00000000">
+
+                <ImageButton
+                    android:id="@+id/vicinity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:src="@mipmap/vicinity" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <!--显示商家信息的弹窗-->
+
+        <RelativeLayout
+            android:id="@+id/stadium_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#FFFFFF"
+            android:clickable="true"
+            android:paddingBottom="10dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <!--场馆名称-->
+                    <TextView
+                        android:id="@+id/stadium_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/icon_location" />
+
+                        <TextView
+                            android:id="@+id/stadium_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/icon_phone" />
+
+                        <TextView
+                            android:id="@+id/stadium_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="15183595276"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:orientation="vertical">
+
+
+                    <ImageButton
+                        android:id="@+id/depart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#00000000"
+                        android:src="@mipmap/strat_line" />
+
+                    <TextView
+                        android:id="@+id/stadium_distance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </FrameLayout><!--分割线弹出窗口-->
+
+</LinearLayout>

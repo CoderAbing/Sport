@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.viencent.sport">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!--手机振动权限-->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="application.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!--百度地图KEY-->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="7tk6xbYLTbqqKaXKxUaFCNmxwXjaijl5" />
+
+        <!--*******启动欢迎界面*******-->
+        <activity
+            android:name=".WelcomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--*******主界面*******-->
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <!--*******运动详细界面*******-->
+        <activity
+            android:name=".SportActivity"
+            android:screenOrientation="portrait"></activity>
+        <!--*******新闻内容界面*******-->
+        <activity
+            android:name=".NewsActivity"
+            android:screenOrientation="portrait"></activity>
+        <!--*******用户信息界面界面*******-->
+        <activity
+            android:name=".UserInfoActivity"
+            android:screenOrientation="portrait"></activity>
+        <!--*******系统设置界面界面*******-->
+        <activity
+            android:name=".SettingActivity"
+            android:screenOrientation="portrait"></activity>
+        <!--*******提醒界面*******-->
+        <activity
+            android:name=".RemindAcitvity"
+            android:screenOrientation="portrait"></activity>
+        <!--*******统计界面*******-->
+        <activity
+            android:name=".StatisticsActivity"
+            android:screenOrientation="portrait"></activity>
+        <!--*******跳转运动界面过渡动画*******-->
+        <activity
+            android:name=".AnimationSkipActivity"
+            android:screenOrientation="portrait"></activity>
+        <!--*******************************分享注册 start**********************************-->
+
+        <!--*******************************分享注册 end**********************************-->
+
+        <!--*******百度地图系统服务*******-->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote">
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v4.0"></action>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="com.baidu.trace.LBSTraceService"
+            android:enabled="true"
+            android:exported="true"></service>
+    </application>
+
+</manifest>
